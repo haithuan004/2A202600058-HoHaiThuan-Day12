@@ -1,0 +1,6 @@
+[build]
+builder = "DOCKER"
+
+[deploy]
+healthcheckPath = "/health"
+healthcheckTimeout = 100

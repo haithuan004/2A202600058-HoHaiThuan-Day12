@@ -12,6 +12,9 @@ from .auth import verify_api_key
 from .rate_limiter import check_rate_limit, r as redis_rate_client
 from .cost_guard import check_budget, r as redis_budget_client
 from .logger import logger
+import sys, os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from utils.mock_llm import generate_response
 
 is_shutting_down = False
 redis_client = redis.from_url(settings.REDIS_URL, decode_responses=True)
@@ -66,7 +69,7 @@ def ready():
         return JSONResponse(status_code=503, content={"status": "not ready"})
 
 @app.post("/ask")
-def ask(
+async def ask(
     req: AskRequest,
     api_key_valid: str = Depends(verify_api_key),
     _rate_limit: None = Depends(rate_limiter_dep),
@@ -77,7 +80,7 @@ def ask(
     history_key = f"history:{req.user_id}"
     history = redis_client.lrange(history_key, 0, -1)
     
-    response = f"I am a mock response to '{req.question}'"
+    response = await generate_response(req.question)
     
     redis_client.rpush(history_key, f"Q: {req.question}")
     redis_client.rpush(history_key, f"A: {response}")
