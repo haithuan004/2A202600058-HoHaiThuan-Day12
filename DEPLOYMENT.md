@@ -1,31 +1,31 @@
 # Deployment Information
 
 ## Public URL
-Chưa cấu hình Server
+https://twoa202600058-hohaithuan-day12.onrender.com
 
 ## Platform
-Railway / Render *(Chọn sau)*
+Render
 
 ## Test Commands
 
 ### Health Check
 ```bash
-curl https://[YOUR_URL]/health
+curl https://twoa202600058-hohaithuan-day12.onrender.com/health
 # Expected: {"status": "ok"}
 ```
 
 ### API Test (with authentication)
 ```bash
-curl -X POST https://[YOUR_URL]/ask \
-  -H "X-API-Key: my-secret-key" \
+curl -X POST https://twoa202600058-hohaithuan-day12.onrender.com/ask \
+  -H "X-API-Key: lakeseaadvantage-hohaithuan-1534" \
   -H "Content-Type: application/json" \
   -d '{"user_id": "user1", "question": "Hello"}'
 ```
 
 ## Environment Variables Set
 - PORT=8000
-- REDIS_URL=redis://redis:6379/0
-- AGENT_API_KEY=my-secret-key
+- REDIS_URL=redis://red-d7h097naqgkc739ktevg:6379
+- AGENT_API_KEY=lakeseaadvantage-hohaithuan-1534
 - LOG_LEVEL=INFO
 - RATE_LIMIT_PER_MINUTE=10
 - MONTHLY_BUDGET_USD=10.0
