@@ -31,6 +31,6 @@ curl -X POST https://twoa202600058-hohaithuan-day12.onrender.com/ask \
 - MONTHLY_BUDGET_USD=10.0
 
 ## Screenshots
-- ![Deployment dashboard](screenshots\dashboard.png)
-- ![Service running](screenshots\running.png)
-- ![Test results](screenshots\test.png)
+- ![Deployment dashboard](screenshots/dashboard.png)
+- ![Service running](screenshots/running.png)
+- ![Test results](screenshots/test.png)
