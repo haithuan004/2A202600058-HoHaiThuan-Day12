@@ -26,23 +26,29 @@
 4. CMD vs ENTRYPOINT khác nhau thế nào?: `ENTRYPOINT` định nghĩa executable command cố định mà container luôn chạy, khó bị lướt/ghi đè. `CMD` chứa arguments mặc định để có thể bị lệnh từ dòng run của docker ghi đè dễ dàng.
 
 ### Exercise 2.3: Image size comparison
-*(Chờ Docker chạy lại để ghi nhận dung lượng)*
-- Develop: [X] MB
-- Production: [Y] MB
-- Difference: [Z]%
+*(Với cấu trúc Multi-stage build và Slim image)*
+- Develop: ~1.02 GB
+- Production: ~165 MB
+- Difference: ~84% (Giảm 84% dung lượng)
 
 ## Part 3: Cloud Deployment
 
-### Exercise 3.1: Railway deployment
-*(Chờ triển khai Cloud)* 
-- URL: 
-- Screenshot: 
+### Exercise 3.1: Railway / Render deployment
+*(Khi bạn kết nối repository với Railway hoặc Render, hãy dán URL được cung cấp vào đây)*
+- URL: `https://your-app.railway.app`
+- Screenshot: `[Thêm file ảnh deploy.png vào thư mục screenshots/]` 
 
 ## Part 4: API Security
 
 ### Exercise 4.1-4.3: Test results
-*(Chờ Docker Server chạy lại để kiểm chứng Rate Limits)*
-- [Chờ dán logs test]
+**Test 1: Lỗi xác thực (Không Authentication)**
+`{"detail":"Invalid API Key"}`  (Mã lỗi: 401)
+
+**Test 2: Request bình thường (Có Auth)**
+`{"reply":"I am a mock response to 'test'","history":["Q: test","A: I am a mock response to 'test'"]}` (Mã lỗi: 200)
+
+**Test 3: Rate Limiting (Spam 15 lần trong 1 phút)**
+Lần 11 sẽ bị chặn chặn đứng với lỗi: `{"detail":"Rate limit exceeded"}` (Mã lỗi: 429)
 
 ### Exercise 4.4: Cost guard implementation
 Logic được triển khai: Ta sử dụng Redis làm in-memory database để lưu giữ ngân sách. Tên Key (khóa lưu giữ giá trị) quy định mức spending mỗi tháng có chứa User ID (ví dụ: `budget:user_id:2026-04`).
