@@ -1,4 +1,4 @@
-#  Code Lab: Deploy Your AI Agent to Production
+~#  Code Lab: Deploy Your AI Agent to Production
 
 > **AICB-P1 · VinUniversity 2026**  
 > Thời gian: 3-4 giờ | Độ khó: Intermediate
@@ -107,10 +107,10 @@ python app.py
 
 | Feature | Basic | Advanced | Tại sao quan trọng? |
 |---------|-------|----------|---------------------|
-| Config | Hardcode | Env vars | ... |
-| Health check |  |  | ... |
-| Logging | print() | JSON | ... |
-| Shutdown | Đột ngột | Graceful | ... |
+| Config | Hardcode | Env vars | Tránh lộ thông tin nhạy cảm và giúp ứng dụng chạy được ở bất kỳ đâu mà không cần sửa code. |
+| Health check | Không có | Có | Giúp Cloud Platform tự động phát hiện lỗi và khởi động lại ứng dụng nếu nó bị treo (Self-healing). |
+| Logging | print() | JSON | Giúp các công cụ giám sát tự động phân tích và tìm lỗi nhanh chóng khi traffic lớn |
+| Shutdown | Đột ngột | Graceful | Tăng trải nghiệm người dùng, đảm bảo hệ thống luôn ổn định ngay cả khi đang bảo trì hoặc cập nhật phiên bản mới. |
 
 ###  Checkpoint 1
 
