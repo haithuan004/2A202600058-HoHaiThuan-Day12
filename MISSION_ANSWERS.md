@@ -35,8 +35,8 @@
 
 ### Exercise 3.1: Railway / Render deployment
 *(Khi bạn kết nối repository với Railway hoặc Render, hãy dán URL được cung cấp vào đây)*
-- URL: `https://your-app.railway.app`
-- Screenshot: `[Thêm file ảnh deploy.png vào thư mục screenshots/]` 
+- URL: `https://twoa202600058-hohaithuan-day12.onrender.com`
+- Screenshot: `[Đã lưu ảnh dashboard.png, running.png và test.png đính kèm]` 
 
 ## Part 4: API Security
 
